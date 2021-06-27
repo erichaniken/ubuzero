@@ -28,9 +28,11 @@ jobs:
            sudo apt install nautilus expect nano pavucontrol vlc -y
            sudo apt install --assume-yes xscreensaver
     - name: Installing tg
-      -run: wget -O- https://telegram.org/dl/desktop/linux | sudo tar xJ -C /opt/
+      run: |
+           wget -O- https://telegram.org/dl/desktop/linux | sudo tar xJ -C /opt/
     - name: Adding tg to path
-      -run: sudo ln -s /opt/Telegram/Telegram /usr/local/bin/telegram-desktop
+      run: |
+           sudo ln -s /opt/Telegram/Telegram /usr/local/bin/telegram-desktop
     - name: Installing Grdp
       run: |
            sudo apt-get update
